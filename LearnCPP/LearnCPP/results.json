@@ -1,0 +1,1 @@
+{"otherData":{},"traceEvents":[{"cat":"function","dur":1951778,"name":"Benchmark::Function1","ph":"X","pid":0,"tid":1916371241,"ts":26271265693},{"cat":"function","dur":1989268,"name":"Benchmark::Function2","ph":"X","pid":0,"tid":3838962958,"ts":26271261522},{"cat":"function","dur":1989534,"name":"Benchmark::RunBenchmarks","ph":"X","pid":0,"tid":3838962958,"ts":26271261321}]}
