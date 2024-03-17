@@ -94,7 +94,6 @@ int IndexBuffersDemo()
         // 方式二，调用宏
         GLCall(glDrawElements(GL_TRIANGLES, 6, GL_INT, nullptr));
 
-
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
 

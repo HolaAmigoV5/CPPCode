@@ -6,3 +6,4 @@ int VertexBuffersDemo();
 int ShadersDemo();
 int DealShadersDemo();
 int IndexBuffersDemo();
+int UniformsDemo();

@@ -18,6 +18,8 @@ int main(void)
     //DealShadersDemo();
 
     // Ë÷Òý»º³åÇø
-    IndexBuffersDemo();
+    //IndexBuffersDemo();
+
+    UniformsDemo();
     return 0;
 }

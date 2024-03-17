@@ -42,6 +42,9 @@
     <ClCompile Include="src\Errors.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\Uniforms.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Main.h">
@@ -57,5 +60,6 @@
   <ItemGroup>
     <None Include="res\shaders\Basic.shader" />
     <None Include="cpp.hint" />
+    <None Include="res\shaders\Uniform.shader" />
   </ItemGroup>
 </Project>
