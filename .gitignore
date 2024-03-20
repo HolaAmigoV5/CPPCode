@@ -37,6 +37,7 @@
 
 # Files
 bin/
+bin-int/
 .vs/
 x64/
 Debug/

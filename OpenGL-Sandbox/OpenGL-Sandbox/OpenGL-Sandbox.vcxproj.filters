@@ -15,11 +15,49 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Main.cpp">
+    <ClCompile Include="src\SandboxApp.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="1.cpp">
+    <ClCompile Include="src\SandboxLayer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\DynamicLayer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Renderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RendererLayer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\SandboxLayer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DynamicLayer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Renderer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RendererLayer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\shaders\glsl.frag.shader" />
+    <None Include="assets\shaders\glsl.vert.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\jt.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="assets\xm.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="assets\mlo.png">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>
