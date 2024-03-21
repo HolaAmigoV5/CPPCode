@@ -35,19 +35,17 @@
 *.pdb
 *.idb
 
+# Visual Studio
+*.vcxproj.user
+*.vcxproj.filters
+.vs/
+
+# Files
+*.ini
+
 # Directories
 **bin/
 **bin-int/
 x64/
 Debug/
 Release/
-
-# Files
-imgui.ini
-
-# Visual Studio
-.vs/
-*.sln
-*.vcxproj
-*.vcxproj.filters
-*.vcxproj.user
