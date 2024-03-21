@@ -43,8 +43,7 @@ Debug/
 Release/
 
 # Files
-*.user
-*imgui.ini
+imgui.ini
 
 # Visual Studio
 .vs/

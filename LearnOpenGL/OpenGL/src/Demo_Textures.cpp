@@ -2,6 +2,7 @@
 #include "VertexBuffer.h"
 #include "VertexBufferLayout.h"
 #include "Texture.h"
+#include "WindowsWindow.h"
 
 #include <GLFW/glfw3.h>
 
@@ -18,7 +19,7 @@ int TextureDemo()
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+    window = glfwCreateWindow(800, 600, "TexturesDemo", NULL, NULL);
     if (!window)
     {
         glfwTerminate();
@@ -32,6 +33,11 @@ int TextureDemo()
     // 必须在创建OpenGL渲染上下文后才能调用glewInit()
     if (glewInit() != GLEW_OK)
         std::cout << "Error\n";
+
+    glViewport(0, 0, 800, 600);
+
+    // 每次窗口大小调整时调用
+    glfwSetFramebufferSizeCallback(window, Window::framebuffer_size_callback);
 
     // 打印OpenGl版本号
     std::cout << glGetString(GL_VERSION) << std::endl;
@@ -71,7 +77,7 @@ int TextureDemo()
         // Texture
         Texture texture("res/textures/Jt.png");
         texture.Bind();
-        shader.SetUniform1i("u_Texture", 0);
+        //shader.SetUniform1i("u_Texture", 0);
         // end Texture
 
         va.Unbind();
@@ -83,6 +89,8 @@ int TextureDemo()
         /* Loop until the user closes the window */
         while (!glfwWindowShouldClose(window))
         {
+            Window::processInput(window);
+
             /* Render here */
             renderer.Clear();
 

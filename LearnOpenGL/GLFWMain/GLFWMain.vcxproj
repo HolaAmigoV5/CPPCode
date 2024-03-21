@@ -152,7 +152,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\DealShaders.cpp" />
+    <ClCompile Include="src\DrawColorfulTriangle.cpp" />
+    <ClCompile Include="src\DrawRectanglecpp.cpp" />
+    <ClCompile Include="src\DrawTriangle.cpp" />
     <ClCompile Include="src\Errors.cpp" />
+    <ClCompile Include="src\glad.c" />
     <ClCompile Include="src\GLEW.cpp" />
     <ClCompile Include="src\GLFW.cpp" />
     <ClCompile Include="src\IndexBuffers.cpp" />
@@ -161,15 +165,18 @@
     <ClCompile Include="src\Shaders.cpp" />
     <ClCompile Include="src\Uniforms.cpp" />
     <ClCompile Include="src\VertexBuffers.cpp" />
+    <ClCompile Include="src\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Errors.h" />
     <ClInclude Include="src\Main.h" />
     <ClInclude Include="src\ShaderHelper.h" />
+    <ClInclude Include="src\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
     <None Include="res\shaders\Basic.shader" />
+    <None Include="res\shaders\Colorful.shader" />
     <None Include="res\shaders\Uniform.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

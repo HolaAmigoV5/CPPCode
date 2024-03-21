@@ -70,11 +70,8 @@ int IndexBuffersDemo()
 
 
     // shader
-    ShaderProgramSource source = ParseShader("res/shaders/Basic.shader");
-    unsigned int shader = CreateShader(source.VertexSource, source.FragmentSource);
-    glUseProgram(shader);
-    // end shader
-
+    ShaderHelper shader("res/shaders/Basic.shader");
+    GLCall(shader.Bind());
     //glBindBuffer(GL_ARRAY_BUFFER, 0);
 
     /* Loop until the user closes the window */
@@ -92,7 +89,7 @@ int IndexBuffersDemo()
         //ASSERT(GLLogCall());
 
         // 方式二，调用宏
-        GLCall(glDrawElements(GL_TRIANGLES, 6, GL_INT, nullptr));
+        GLCall(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
 
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
@@ -100,9 +97,6 @@ int IndexBuffersDemo()
         /* Poll for and process events */
         glfwPollEvents();
     }
-
-    // 释放
-    glDeleteProgram(shader);
 
     glfwTerminate();
     return 0;

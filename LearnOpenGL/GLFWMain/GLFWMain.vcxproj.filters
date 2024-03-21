@@ -45,6 +45,21 @@
     <ClCompile Include="src\Uniforms.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\glad.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DrawTriangle.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WindowsWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DrawRectanglecpp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DrawColorfulTriangle.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Main.h">
@@ -56,10 +71,14 @@
     <ClInclude Include="src\Errors.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\WindowsWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\Basic.shader" />
     <None Include="cpp.hint" />
     <None Include="res\shaders\Uniform.shader" />
+    <None Include="res\shaders\Colorful.shader" />
   </ItemGroup>
 </Project>

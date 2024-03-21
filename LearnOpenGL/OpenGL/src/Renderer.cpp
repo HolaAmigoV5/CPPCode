@@ -15,6 +15,7 @@ bool GLLogCall(const char* function, const char* file, int line) {
 
 void Renderer::Clear() const
 {
+    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);   // 清除所有颜色，以深蓝绿色填充
     GLCall(glClear(GL_COLOR_BUFFER_BIT));
 }
 

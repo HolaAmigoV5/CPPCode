@@ -3,7 +3,7 @@
 int main(void) {
 	//UniformsDemo();
 
-	//TextureDemo();
+	TextureDemo();
 
 	//MathsDemo();
 
@@ -15,6 +15,6 @@ int main(void) {
 
 	//TestFrameworkDemo();
 
-	TestTexture2DDemo();
+	//TestTexture2DDemo();
 	return 0;
 }

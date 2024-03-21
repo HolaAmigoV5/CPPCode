@@ -1,6 +1,6 @@
 #include <GL\glew.h>
 #include <GLFW/glfw3.h>
-
+#include "WindowsWindow.h"
 #include <iostream>
 
 // 使用着色器将三角形绘制成红色
@@ -29,14 +29,14 @@ static unsigned int CompileShader(unsigned int type, const std::string& source) 
 }
 
 static unsigned int CreateShader(const std::string& vertexShader, const std::string& fragmentShader) {
-    unsigned int program = glCreateProgram();
+    unsigned int program = glCreateProgram();   // 创建程序，返回程序对象ID引用
     unsigned int vs = CompileShader(GL_VERTEX_SHADER, vertexShader);
     unsigned int fs = CompileShader(GL_FRAGMENT_SHADER, fragmentShader);
 
-    glAttachShader(program, vs);
+    glAttachShader(program, vs);    // 着色器附加到程序
     glAttachShader(program, fs);
-    glLinkProgram(program);
-    glValidateProgram(program);
+    glLinkProgram(program);         // 链接程序
+    glValidateProgram(program);     // 程序验证
 
     glDeleteShader(vs);
     glDeleteShader(fs);
@@ -54,7 +54,7 @@ int ShadersDemo()
         return -1;
 
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+    window = glfwCreateWindow(800, 600, "Hello World", NULL, NULL);
     if (!window)
     {
         glfwTerminate();
@@ -70,6 +70,12 @@ int ShadersDemo()
 
     // 打印OpenGl版本号
     std::cout << glGetString(GL_VERSION) << std::endl;
+
+    // 前面两个参数控制窗口左下角位置，后面参数设置渲染窗口的宽高
+    glViewport(0, 0, 800, 600);
+
+    // 每次窗口大小调整时调用
+    glfwSetFramebufferSizeCallback(window, Window::framebuffer_size_callback);
 
     float positions[6] = {
        -0.5f, -0.5f,
@@ -117,7 +123,7 @@ int ShadersDemo()
         "}\n";
 
     unsigned int shader = CreateShader(vertexShader, fragmentShader);
-    glUseProgram(shader);
+    glUseProgram(shader);   // 激活程序对象
     // end shader
 
     //glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -125,7 +131,9 @@ int ShadersDemo()
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
-        /* Render here */
+        Window::processInput(window);
+
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);   // 清除所有颜色，以深蓝绿色填充
         glClear(GL_COLOR_BUFFER_BIT);
 
         glDrawArrays(GL_TRIANGLES, 0, 3);

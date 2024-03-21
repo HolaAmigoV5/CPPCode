@@ -5,8 +5,43 @@
 #include <sstream>
 #include "ShaderHelper.h"
 
+
+ShaderHelper::ShaderHelper(const std::string& filepath)
+    :m_ShaderID(0)
+{
+    ShaderProgramSource source = ParseShader(filepath);
+    m_ShaderID = CreateShader(source.VertexSource, source.FragmentSource);
+}
+
+ShaderHelper::~ShaderHelper()
+{
+    glDeleteProgram(m_ShaderID);
+}
+
+void ShaderHelper::Bind() const
+{
+    glUseProgram(m_ShaderID);
+}
+
+void ShaderHelper::Unbind() const
+{
+    glUseProgram(0);
+}
+
+void ShaderHelper::setBool(const std::string& name, bool value) const
+{
+}
+
+void ShaderHelper::setInt(const std::string& name, int value) const
+{
+}
+
+void ShaderHelper::setFloat(const std::string& name, float value) const
+{
+}
+
 // 读取shader文件，缓存到内存中
-ShaderProgramSource ParseShader(const std::string& filepath) {
+ShaderProgramSource ShaderHelper::ParseShader(const std::string& filepath) {
     std::ifstream stream(filepath);
 
     enum class ShaderType
@@ -35,7 +70,7 @@ ShaderProgramSource ParseShader(const std::string& filepath) {
     return { ss[0].str(), ss[1].str() };
 }
 
-unsigned int CompileShader(unsigned int type, const std::string& source) {
+unsigned int ShaderHelper::CompileShader(unsigned int type, const std::string& source) {
     unsigned int id = glCreateShader(type);
     const char* src = source.c_str();
     glShaderSource(id, 1, &src, nullptr);
@@ -59,7 +94,7 @@ unsigned int CompileShader(unsigned int type, const std::string& source) {
     return id;
 }
 
-unsigned int CreateShader(const std::string& vertexShader, const std::string& fragmentShader) {
+unsigned int ShaderHelper::CreateShader(const std::string& vertexShader, const std::string& fragmentShader) {
     unsigned int program = glCreateProgram();
     unsigned int vs = CompileShader(GL_VERTEX_SHADER, vertexShader);
     unsigned int fs = CompileShader(GL_FRAGMENT_SHADER, fragmentShader);
@@ -74,3 +109,6 @@ unsigned int CreateShader(const std::string& vertexShader, const std::string& fr
 
     return program;
 }
+
+
+

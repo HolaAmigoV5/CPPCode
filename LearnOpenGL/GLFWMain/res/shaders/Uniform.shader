@@ -9,10 +9,10 @@ void main()
 
 #shader fragment
 #version 330 core
-layout(location=0) out vec4 color;
+out vec4 color;
 uniform vec4 u_Color;   // Shader文件中定义uniform
 
 void main()
 {
-    color=u_Color;      // 使用uniform变量
+    color = u_Color;      // 使用uniform变量
 }
