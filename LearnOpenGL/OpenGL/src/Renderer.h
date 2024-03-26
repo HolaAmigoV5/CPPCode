@@ -23,5 +23,20 @@ class Renderer
 {
 public:
     void Clear() const;
+
+	/// <summary>
+	/// 使用索引绘图
+	/// </summary>
+	/// <param name="va">顶点数组</param>
+	/// <param name="ib">索引</param>
+	/// <param name="shader">着色器</param>
 	void Draw(const VertexArray& va, const IndexBuffer& ib, const Shader& shader) const;
+
+    /// <summary>
+    /// 不使用索引绘图
+    /// </summary>
+    /// <param name="va"></param>
+    /// <param name="shader"></param>
+    /// <param name="count"></param>
+    void Draw(const VertexArray& va, const Shader& shader, const unsigned int count) const;
 };

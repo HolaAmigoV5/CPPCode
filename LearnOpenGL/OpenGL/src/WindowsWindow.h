@@ -1,12 +1,16 @@
 #pragma once
+#include "Camera.h"
 #include <GLFW/glfw3.h>
 
-class Window
-{
-public:
-	// 定义回调
-	static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+const unsigned int SCR_WIDTH = 800;
+const unsigned int SCR_HEIGHT = 600;
 
-	//定义输入处理
-	static void processInput(GLFWwindow* window);
-};
+extern Camera camera;
+
+extern void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+extern void processInput(GLFWwindow* window);
+
+extern void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+extern void mouse_callback(GLFWwindow* window, double xposIn, double yposIn);
+extern void processInputWASD(GLFWwindow* window, float deltaTime);
+

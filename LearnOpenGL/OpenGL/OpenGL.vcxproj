@@ -124,6 +124,7 @@
       <AdditionalIncludeDirectories>src;src\vendor\;$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include</AdditionalIncludeDirectories>
       <LanguageStandard>Default</LanguageStandard>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <LanguageStandard_C>Default</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -155,13 +156,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\Demo_Camera.cpp" />
+    <ClCompile Include="src\Demo_DiffuseMap.cpp" />
+    <ClCompile Include="src\Demo_DrawCube.cpp" />
     <ClCompile Include="src\Demo_ImGui.cpp" />
+    <ClCompile Include="src\Demo_LightCaster.cpp" />
+    <ClCompile Include="src\Demo_LightingColor.cpp" />
+    <ClCompile Include="src\Demo_Material.cpp" />
     <ClCompile Include="src\Demo_Maths.cpp" />
+    <ClCompile Include="src\Demo_MultipleLights.cpp" />
     <ClCompile Include="src\Demo_MultipleRender.cpp" />
     <ClCompile Include="src\Demo_MVPMatrices.cpp" />
     <ClCompile Include="src\Demo_TestFramework.cpp" />
     <ClCompile Include="src\Demo_TestTexture2D.cpp" />
     <ClCompile Include="src\Demo_Textures.cpp" />
+    <ClCompile Include="src\Demo_TextureUnit.cpp" />
+    <ClCompile Include="src\Demo_Transform.cpp" />
     <ClCompile Include="src\Demo_Uniforms.cpp" />
     <ClCompile Include="src\IndexBuffer.cpp" />
     <ClCompile Include="src\Main.cpp" />
@@ -185,6 +196,7 @@
     <ClCompile Include="src\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Camera.h" />
     <ClInclude Include="src\IndexBuffer.h" />
     <ClInclude Include="src\Main.h" />
     <ClInclude Include="src\Renderer.h" />
@@ -497,8 +509,17 @@
     <ClInclude Include="src\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="res\shaders\Colors.Shader" />
+    <None Include="res\shaders\Cube.shader" />
+    <None Include="res\shaders\DiffuseMap.Shader" />
+    <None Include="res\shaders\Light.Shader" />
+    <None Include="res\shaders\LightCaster.Shader" />
+    <None Include="res\shaders\Material.Shader" />
     <None Include="res\shaders\Maths.shader" />
+    <None Include="res\shaders\MultipleLights.Shader" />
     <None Include="res\shaders\Texture.shader" />
+    <None Include="res\shaders\TextureUnit.shader" />
+    <None Include="res\shaders\Transform.shader" />
     <None Include="res\shaders\Uniform.shader" />
     <None Include="src\vendor\glm\detail\func_common.inl" />
     <None Include="src\vendor\glm\detail\func_common_simd.inl" />
@@ -640,7 +661,13 @@
     <None Include="src\vendor\glm\gtx\wrap.inl" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="C:\Users\LFive\Desktop\container2_specular.png" />
+    <Image Include="res\textures\container2.png" />
+    <Image Include="res\textures\container2_specular.png" />
     <Image Include="res\textures\Jt.png" />
+    <Image Include="res\textures\mlo.png" />
+    <Image Include="res\textures\xm.png" />
+    <Image Include="res\textures\zq.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

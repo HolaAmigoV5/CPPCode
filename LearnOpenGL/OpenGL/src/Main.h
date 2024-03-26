@@ -1,6 +1,7 @@
 #pragma once
 
 int TextureDemo();
+int TextureUnitDemo();
 int UniformsDemo();
 int MathsDemo();
 int MVPMatricesDemo();
@@ -8,3 +9,11 @@ int ImGUIDemo();
 int MultipleDemo();
 int TestFrameworkDemo();
 int TestTexture2DDemo();
+int TransformDemo();
+int DrawCubeDemo();
+int CameraCubeDemo();
+int LightColorDemo();
+int MaterialDemo();
+int DiffuseMapDemo();
+int LightCasterDemo();
+int MultipleLightsDemo();
