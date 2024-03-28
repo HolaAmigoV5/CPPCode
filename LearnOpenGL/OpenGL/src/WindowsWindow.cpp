@@ -26,24 +26,26 @@ void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 
 void mouse_callback(GLFWwindow* window, double xposIn, double yposIn)
 {
-    float xpos = static_cast<float>(xposIn);
-    float ypos = static_cast<float>(yposIn);
+    if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS) {
+        float xpos = static_cast<float>(xposIn);
+        float ypos = static_cast<float>(yposIn);
 
-    if (m_FirstMouse) {
+        if (m_FirstMouse) {
+            m_LastX = xpos;
+            m_LastY = ypos;
+            m_FirstMouse = false;
+        }
+
+        float xoffset = xpos - m_LastX;
+        float yoffset = m_LastY - ypos;   // 注意这里是相反的，因为y坐标是从底部往顶部依次增大的
         m_LastX = xpos;
         m_LastY = ypos;
-        m_FirstMouse = false;
+
+        xoffset *= SENSITIVITY;
+        yoffset *= SENSITIVITY;
+
+        camera.UpdateCameraYawAndPitch(xoffset, yoffset);
     }
-
-    float xoffset = xpos - m_LastX;
-    float yoffset = m_LastY - ypos;   // 注意这里是相反的，因为y坐标是从底部往顶部依次增大的
-    m_LastX = xpos;
-    m_LastY = ypos;
-
-    xoffset *= SENSITIVITY;
-    yoffset *= SENSITIVITY;
-
-    camera.UpdateCameraYawAndPitch(xoffset, yoffset);
 }
 
 void processInputWASD(GLFWwindow* window, float deltaTime)

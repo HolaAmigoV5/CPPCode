@@ -12,7 +12,7 @@ enum Camera_Movement
 const float YAW = -90.0f;		// 偏航角
 const float PITCH = 0.0f;		// 俯仰角
 const float SPEED = 2.5f;		// 速度
-const float SENSITIVITY = 0.1f;	// 精准度
+const float SENSITIVITY = 0.05f;	// 精准度
 const float ZOOM = 45.0f;		// 缩放视角fov
 
 class Camera

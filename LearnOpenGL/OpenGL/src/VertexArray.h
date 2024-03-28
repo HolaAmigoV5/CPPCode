@@ -15,7 +15,6 @@ public:
 
 	void Bind() const;
 	void Unbind() const;
-
 private:
 	unsigned int m_RendererID;
 };

@@ -238,7 +238,7 @@ int MultipleLightsDemo()
                 float angle = 20.0f * i;
                 model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
                 glm::mat4 mvp = proj * view * model;
-                colorShader.SetUniformMat4f("model", model);
+                //colorShader.SetUniformMat4f("model", model);
                 colorShader.SetUniformMat4f("transform", mvp);
                 renderer.Draw(objVa, colorShader, 36);
             }

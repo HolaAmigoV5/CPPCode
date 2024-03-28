@@ -17,3 +17,4 @@ int MaterialDemo();
 int DiffuseMapDemo();
 int LightCasterDemo();
 int MultipleLightsDemo();
+int ModelLoadingDemo();

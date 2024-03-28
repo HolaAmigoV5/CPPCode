@@ -153,9 +153,9 @@ int MaterialDemo()
 
             // …Ë÷√π‚‘¥
             glm::vec4 lightColor{};
-            lightColor.x = sin(glfwGetTime() * 2.0f);
-            lightColor.y = sin(glfwGetTime() * 0.7f);
-            lightColor.z = sin(glfwGetTime() * 1.3f);
+            lightColor.x = static_cast<float>(sin(glfwGetTime() * 2.0f));
+            lightColor.y = static_cast<float>(sin(glfwGetTime() * 0.7f));
+            lightColor.z = static_cast<float>(sin(glfwGetTime() * 1.3f));
             glm::vec4 diffuseColor = 0.8f * lightColor;
             glm::vec4 ambientColor = 0.2f * lightColor;
 

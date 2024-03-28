@@ -40,6 +40,9 @@ int main(void) {
 	// 投光物
 	//LightCasterDemo();
 
-	MultipleLightsDemo();
+	// 多光源
+	//MultipleLightsDemo();
+
+	ModelLoadingDemo();
 	return 0;
 }

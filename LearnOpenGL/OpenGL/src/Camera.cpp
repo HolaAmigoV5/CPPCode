@@ -31,7 +31,7 @@ void Camera::UpdateCameraYawAndPitch(float xoffset, float yoffset) {
 	else if (m_Pitch < -89.0f)
 		m_Pitch = -89.0f;
 
-	updateCameraVectors();
+	//updateCameraVectors();
 }
 
 glm::mat4 Camera::GetViewMatrix() const

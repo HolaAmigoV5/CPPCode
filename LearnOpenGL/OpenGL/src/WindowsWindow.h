@@ -13,4 +13,3 @@ extern void processInput(GLFWwindow* window);
 extern void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 extern void mouse_callback(GLFWwindow* window, double xposIn, double yposIn);
 extern void processInputWASD(GLFWwindow* window, float deltaTime);
-
